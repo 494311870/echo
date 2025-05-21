@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfh7cs6w1u5in"]
+
+[ext_resource type="Texture2D" uid="uid://bddmeo8x5fn35" path="res://art/cards/exit.png" id="1_gy37r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pc4uo"]
+bg_color = Color(0.298039, 0.482353, 0.67451, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.803922, 0.858824, 0.913725, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="Card" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 173.0
+offset_top = 269.0
+offset_right = -1597.0
+offset_bottom = -611.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pc4uo")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_gy37r")
+expand_mode = 1
+stretch_mode = 5

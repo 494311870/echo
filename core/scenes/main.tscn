@@ -1,3 +1,28 @@
-[gd_scene format=3 uid="uid://bbp2hjdxky5hq"]
+[gd_scene load_steps=3 format=3 uid="uid://bbp2hjdxky5hq"]
+
+[ext_resource type="PackedScene" uid="uid://bfh7cs6w1u5in" path="res://core/scenes/card.tscn" id="1_g35v5"]
+[ext_resource type="Texture2D" uid="uid://dgt6hrvske42w" path="res://art/location_color (1).png" id="2_3xncx"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Card" parent="CanvasLayer" instance=ExtResource("1_g35v5")]
+
+[node name="Card2" parent="CanvasLayer" instance=ExtResource("1_g35v5")]
+offset_left = 518.0
+offset_top = 255.0
+offset_right = -1252.0
+offset_bottom = -625.0
+
+[node name="Card3" parent="CanvasLayer" instance=ExtResource("1_g35v5")]
+offset_left = 922.0
+offset_top = 487.0
+offset_right = -848.0
+offset_bottom = -393.0
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(1016, 542)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_3xncx")
+metadata/_edit_lock_ = true
