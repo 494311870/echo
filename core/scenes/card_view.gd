@@ -12,10 +12,15 @@ extends Control
 @export var move_duration: float = 0.5     # 整体移动时间
 
 @onready var _art: TextureRect = %Art
-@onready var _flip_bottom : Control = %FlipBottom
+@onready var _flip_bottom: Control = %FlipBottom
 
 var _is_dragging: bool = false
 var direction: int     = 1
+var _shader_material: ShaderMaterial
+
+
+func _ready() -> void:
+	_shader_material = _art.material
 
 
 func flip() -> void:
@@ -33,6 +38,14 @@ func is_resolved() -> bool:
 
 
 func mark_resolved() -> void:
+	var tween = create_tween()
+	tween.tween_method(
+		func(value: float):
+			_shader_material.set_shader_parameter("hurt_intensity", value),
+			1.0, 0.0, 0.2
+	)
+	await tween.finished
+	
 	_art.texture = null
 	card = null
 	queue_free()
@@ -53,6 +66,13 @@ func interact(other: CardView)  -> void:
 
 func respond() -> void:
 	card.view = self
+
+	var tween = create_tween()
+	tween.tween_method(
+		func(value: float):
+			_shader_material.set_shader_parameter("hurt_intensity", value),
+		1.0, 0.0, 0.2
+	)
 
 
 func change_art(value: Texture2D) -> void:

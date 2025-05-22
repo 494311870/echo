@@ -3,6 +3,7 @@
 [ext_resource type="Shader" uid="uid://dbinsohjwgjuo" path="res://art/shader/flash.gdshader" id="1_5le2a"]
 
 [resource]
+resource_local_to_scene = true
 shader = ExtResource("1_5le2a")
 shader_parameter/hurt_intensity = 0.0
 shader_parameter/hurt_color = Color(0.85098, 0.890196, 0.933333, 1)
