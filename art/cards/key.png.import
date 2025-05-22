@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpd3grta8u3aq"
-path="res://.godot/imported/huamn.png-0ec01ccb747d4663308d32d3a5b7f3de.ctex"
+uid="uid://cy67v5nki6eyv"
+path="res://.godot/imported/key.png-a169750c07675b0cf3a333dabfa55605.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/cards/huamn.png"
-dest_files=["res://.godot/imported/huamn.png-0ec01ccb747d4663308d32d3a5b7f3de.ctex"]
+source_file="res://art/cards/key.png"
+dest_files=["res://.godot/imported/key.png-a169750c07675b0cf3a333dabfa55605.ctex"]
 
 [params]
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfh7cs6w1u5in"]
+[gd_scene load_steps=4 format=3 uid="uid://bfh7cs6w1u5in"]
 
-[ext_resource type="Texture2D" uid="uid://bddmeo8x5fn35" path="res://art/cards/exit.png" id="1_gy37r"]
+[ext_resource type="Script" uid="uid://dqgq4evqvcjrv" path="res://core/scenes/card_view.gd" id="1_03j8f"]
+[ext_resource type="Texture2D" uid="uid://cpd3grta8u3aq" path="res://art/cards/huamn_normal.png" id="2_si7t7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pc4uo"]
 bg_color = Color(0.298039, 0.482353, 0.67451, 1)
@@ -14,17 +15,21 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[node name="Card" type="PanelContainer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 173.0
-offset_top = 269.0
-offset_right = -1597.0
-offset_bottom = -611.0
+[node name="CardView" type="PanelContainer" groups=["cards"]]
+custom_minimum_size = Vector2(300, 400)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -200.0
+offset_right = 150.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pc4uo")
+script = ExtResource("1_03j8f")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -33,8 +38,9 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+[node name="Art" type="TextureRect" parent="MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("1_gy37r")
+texture = ExtResource("2_si7t7")
 expand_mode = 1
 stretch_mode = 5

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwxd3fbw46shg"]
+
+[ext_resource type="Script" uid="uid://dke4eirjwocfs" path="res://core/scenes/card_slot.gd" id="1_25f0s"]
+[ext_resource type="StyleBox" uid="uid://cfq70epi0njpb" path="res://theme/card_border_style_box.tres" id="1_kfuym"]
+
+[node name="CardSlot" type="Panel"]
+custom_minimum_size = Vector2(300, 400)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -200.0
+offset_right = 150.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_kfuym")
+script = ExtResource("1_25f0s")

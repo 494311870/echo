@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bvwm8h4fxxqsb"]
+
+[ext_resource type="Texture2D" uid="uid://dvavpcprxu7k3" path="res://art/cards/door_open.png" id="1_ixw4y"]
+[ext_resource type="Texture2D" uid="uid://cwyvbh5v007mw" path="res://art/cards/door.png" id="1_u3xtc"]
+[ext_resource type="Script" uid="uid://de2br3jbwbf1f" path="res://core/contents/cards/card_door.gd" id="1_xrfko"]
+
+[resource]
+script = ExtResource("1_xrfko")
+_art_open = ExtResource("1_ixw4y")
+art = ExtResource("1_u3xtc")
+metadata/_custom_type_script = "uid://cfgiwpj6oic73"

@@ -1,28 +1,146 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbp2hjdxky5hq"]
+[gd_scene load_steps=13 format=3 uid="uid://bbp2hjdxky5hq"]
 
-[ext_resource type="PackedScene" uid="uid://bfh7cs6w1u5in" path="res://core/scenes/card.tscn" id="1_g35v5"]
 [ext_resource type="Texture2D" uid="uid://dgt6hrvske42w" path="res://art/location_color (1).png" id="2_3xncx"]
+[ext_resource type="Script" uid="uid://c430w7ah1fako" path="res://core/scenes/main_handler.gd" id="2_x0aot"]
+[ext_resource type="Script" uid="uid://clkbuhgkgrlua" path="res://core/scenes/level_handler.gd" id="3_cgnor"]
+[ext_resource type="PackedScene" uid="uid://bfh7cs6w1u5in" path="res://core/scenes/card_view.tscn" id="3_dnmk2"]
+[ext_resource type="PackedScene" uid="uid://cwxd3fbw46shg" path="res://core/scenes/card_slot.tscn" id="3_oybgn"]
+[ext_resource type="Resource" uid="uid://dewuujif88kt6" path="res://core/contents/cards/card_human.tres" id="4_dnmk2"]
+[ext_resource type="Script" uid="uid://d1yxml56qnl0m" path="res://core/scenes/hand_handler.gd" id="4_pqgap"]
+[ext_resource type="Script" uid="uid://c7dl6u4hddkmy" path="res://core/domain/level.gd" id="4_xuy07"]
+[ext_resource type="Resource" uid="uid://drmijax0w6vxa" path="res://core/contents/cards/card_exit.tres" id="5_6payd"]
+[ext_resource type="Resource" uid="uid://d1dbxwmeglvnt" path="res://core/contents/levels/level_1.tres" id="5_m1f21"]
+[ext_resource type="Texture2D" uid="uid://dxth6jerrkaoq" path="res://art/ui/arrow_right.png" id="6_pofmd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xuy07"]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Card" parent="CanvasLayer" instance=ExtResource("1_g35v5")]
-
-[node name="Card2" parent="CanvasLayer" instance=ExtResource("1_g35v5")]
-offset_left = 518.0
-offset_top = 255.0
-offset_right = -1252.0
-offset_bottom = -625.0
-
-[node name="Card3" parent="CanvasLayer" instance=ExtResource("1_g35v5")]
-offset_left = 922.0
-offset_top = 487.0
-offset_right = -848.0
-offset_bottom = -393.0
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(1016, 542)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_3xncx")
 metadata/_edit_lock_ = true
+
+[node name="Handlers" type="Node" parent="."]
+
+[node name="MainHandler" type="Node" parent="Handlers" node_paths=PackedStringArray("_run_slots") groups=["main_handler"]]
+script = ExtResource("2_x0aot")
+_run_slots = NodePath("../../Slot/VBoxContainer/Run")
+
+[node name="LevelHandler" type="Node" parent="Handlers" groups=["level_handler"]]
+script = ExtResource("3_cgnor")
+levels = Array[ExtResource("4_xuy07")]([ExtResource("5_m1f21")])
+
+[node name="HandHandler" type="Node" parent="Handlers" node_paths=PackedStringArray("_hand_slots", "_deck_position")]
+script = ExtResource("4_pqgap")
+_hand_slots = NodePath("../../Slot/VBoxContainer/Hand")
+_card_view_prefab = ExtResource("3_dnmk2")
+_deck_position = NodePath("../../Slot/DeckPosition")
+
+[node name="DragPreview" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="DragPreview" type="Control" parent="DragPreview" groups=["drag_preview"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Slot" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Slot"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -780.0
+offset_top = -402.0
+offset_right = 780.0
+offset_bottom = 402.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="Run" type="HBoxContainer" parent="Slot/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="CardSlot" parent="Slot/VBoxContainer/Run" instance=ExtResource("3_oybgn")]
+layout_mode = 2
+
+[node name="StartCard" parent="Slot/VBoxContainer/Run/CardSlot" instance=ExtResource("3_dnmk2")]
+layout_mode = 2
+anchors_preset = 0
+card = ExtResource("4_dnmk2")
+
+[node name="CardSlot2" parent="Slot/VBoxContainer/Run" instance=ExtResource("3_oybgn")]
+layout_mode = 2
+
+[node name="CardSlot3" parent="Slot/VBoxContainer/Run" instance=ExtResource("3_oybgn")]
+layout_mode = 2
+
+[node name="CardSlot4" parent="Slot/VBoxContainer/Run" instance=ExtResource("3_oybgn")]
+layout_mode = 2
+
+[node name="CardSlot5" parent="Slot/VBoxContainer/Run" instance=ExtResource("3_oybgn")]
+layout_mode = 2
+
+[node name="CardView" parent="Slot/VBoxContainer/Run/CardSlot5" instance=ExtResource("3_dnmk2")]
+layout_mode = 2
+anchors_preset = 0
+card = ExtResource("5_6payd")
+
+[node name="Hand" type="HBoxContainer" parent="Slot/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="CardSlot" parent="Slot/VBoxContainer/Hand" instance=ExtResource("3_oybgn")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xuy07")
+
+[node name="CardSlot2" parent="Slot/VBoxContainer/Hand" instance=ExtResource("3_oybgn")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xuy07")
+
+[node name="CardSlot3" parent="Slot/VBoxContainer/Hand" instance=ExtResource("3_oybgn")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xuy07")
+
+[node name="CardSlot4" parent="Slot/VBoxContainer/Hand" instance=ExtResource("3_oybgn")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xuy07")
+
+[node name="CardSlot5" parent="Slot/VBoxContainer/Hand" instance=ExtResource("3_oybgn")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xuy07")
+
+[node name="DeckPosition" type="Marker2D" parent="Slot"]
+position = Vector2(-252, 550)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="RunButton" type="Button" parent="HUD"]
+custom_minimum_size = Vector2(100, 100)
+offset_left = 1787.0
+offset_top = 497.0
+offset_right = 1887.0
+offset_bottom = 597.0
+
+[node name="TextureRect" type="TextureRect" parent="HUD/RunButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_pofmd")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="level_started" from="Handlers/LevelHandler" to="Handlers/HandHandler" method="_draw_cards"]
+[connection signal="pressed" from="HUD/RunButton" to="Handlers/MainHandler" method="_run"]

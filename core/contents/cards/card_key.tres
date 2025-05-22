@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bjq2f7ma35773"]
+
+[ext_resource type="Texture2D" uid="uid://cy67v5nki6eyv" path="res://art/cards/key.png" id="1_dm2sb"]
+[ext_resource type="Script" uid="uid://dfuho5ibms4h6" path="res://core/contents/cards/card_key.gd" id="2_dm2sb"]
+
+[resource]
+script = ExtResource("2_dm2sb")
+art = ExtResource("1_dm2sb")
+metadata/_custom_type_script = "uid://cfgiwpj6oic73"

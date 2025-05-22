@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://drmijax0w6vxa"]
+
+[ext_resource type="Script" uid="uid://srylfsgo6u3f" path="res://core/contents/cards/card_exit.gd" id="1_e6udx"]
+[ext_resource type="Texture2D" uid="uid://bddmeo8x5fn35" path="res://art/cards/exit.png" id="1_utlyf"]
+
+[resource]
+script = ExtResource("1_e6udx")
+art = ExtResource("1_utlyf")
+metadata/_custom_type_script = "uid://cfgiwpj6oic73"
