@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Level" load_steps=6 format=3 uid="uid://ce67ouxibttg7"]
+
+[ext_resource type="Script" uid="uid://cfgiwpj6oic73" path="res://core/domain/card.gd" id="1_c526i"]
+[ext_resource type="Resource" uid="uid://doohga8qtt7ov" path="res://core/contents/cards/card_guard_2.tres" id="2_c526i"]
+[ext_resource type="Resource" uid="uid://cgqo0mv2a35ly" path="res://core/contents/cards/card_bullet.tres" id="3_4366o"]
+[ext_resource type="Resource" uid="uid://bto4skkj4q46r" path="res://core/contents/levels/level_3.tres" id="4_c526i"]
+[ext_resource type="Script" uid="uid://c7dl6u4hddkmy" path="res://core/domain/level.gd" id="5_4qewq"]
+
+[resource]
+script = ExtResource("5_4qewq")
+reference_level = ExtResource("4_c526i")
+cards = Array[ExtResource("1_c526i")]([ExtResource("2_c526i"), ExtResource("3_4366o")])

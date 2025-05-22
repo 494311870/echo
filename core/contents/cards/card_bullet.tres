@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cgqo0mv2a35ly"]
+
+[ext_resource type="Script" uid="uid://bukw3exeh8ylu" path="res://core/contents/cards/card_bullet.gd" id="1_pjf41"]
+[ext_resource type="Texture2D" uid="uid://wvgjnwnhvt7a" path="res://art/cards/ammo.png" id="1_pr1ge"]
+
+[resource]
+script = ExtResource("1_pjf41")
+art = ExtResource("1_pr1ge")
+flip_bottom = false

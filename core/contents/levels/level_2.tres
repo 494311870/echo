@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://coviwib8wagay" path="res://core/contents/cards/card_weapon.tres" id="4_a63s6"]
 [ext_resource type="Resource" uid="uid://d1dbxwmeglvnt" path="res://core/contents/levels/level_1.tres" id="4_cvipp"]
 [ext_resource type="Script" uid="uid://c7dl6u4hddkmy" path="res://core/domain/level.gd" id="4_q7p8m"]
-[ext_resource type="Resource" uid="uid://cm5n7u40u2lgp" path="res://core/contents/cards/card_guard.tres" id="5_cvipp"]
+[ext_resource type="Resource" uid="uid://cm5n7u40u2lgp" path="res://core/contents/cards/card_guard_1.tres" id="5_cvipp"]
 
 [resource]
 script = ExtResource("4_q7p8m")
