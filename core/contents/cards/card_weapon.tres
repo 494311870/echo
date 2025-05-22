@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://coviwib8wagay"]
+
+[ext_resource type="Texture2D" uid="uid://b81oio6mn3kel" path="res://art/cards/weapon.png" id="1_hgmhg"]
+[ext_resource type="Script" uid="uid://byhcq8f0k5d43" path="res://core/contents/cards/card_weapon.gd" id="2_hu4r5"]
+
+[resource]
+script = ExtResource("2_hu4r5")
+art = ExtResource("1_hgmhg")
+metadata/_custom_type_script = "uid://cfgiwpj6oic73"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Level" load_steps=7 format=3 uid="uid://brg82j6ie7ib1"]
+
+[ext_resource type="Script" uid="uid://cfgiwpj6oic73" path="res://core/domain/card.gd" id="1_p4v1q"]
+[ext_resource type="Resource" uid="uid://bjq2f7ma35773" path="res://core/contents/cards/card_key.tres" id="2_a63s6"]
+[ext_resource type="Resource" uid="uid://bvwm8h4fxxqsb" path="res://core/contents/cards/card_door.tres" id="3_cvipp"]
+[ext_resource type="Resource" uid="uid://coviwib8wagay" path="res://core/contents/cards/card_weapon.tres" id="4_a63s6"]
+[ext_resource type="Script" uid="uid://c7dl6u4hddkmy" path="res://core/domain/level.gd" id="4_q7p8m"]
+[ext_resource type="Resource" uid="uid://cm5n7u40u2lgp" path="res://core/contents/cards/card_guard.tres" id="5_cvipp"]
+
+[resource]
+script = ExtResource("4_q7p8m")
+cards = Array[ExtResource("1_p4v1q")]([ExtResource("2_a63s6"), ExtResource("3_cvipp"), ExtResource("4_a63s6"), ExtResource("5_cvipp")])
