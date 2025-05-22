@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Level" load_steps=6 format=3 uid="uid://ce67ouxibttg7"]
+
+[ext_resource type="Script" uid="uid://cfgiwpj6oic73" path="res://core/domain/card.gd" id="1_f82hy"]
+[ext_resource type="Resource" uid="uid://doohga8qtt7ov" path="res://core/contents/cards/card_guard_2.tres" id="2_lohig"]
+[ext_resource type="Resource" uid="uid://cgqo0mv2a35ly" path="res://core/contents/cards/card_bullet.tres" id="3_c60k4"]
+[ext_resource type="Resource" uid="uid://c8cdt3quvrihc" path="res://core/contents/levels/level_4.tres" id="3_f82hy"]
+[ext_resource type="Script" uid="uid://c7dl6u4hddkmy" path="res://core/domain/level.gd" id="5_rlyhe"]
+
+[resource]
+script = ExtResource("5_rlyhe")
+reference_level = ExtResource("3_f82hy")
+cards = Array[ExtResource("1_f82hy")]([ExtResource("2_lohig"), ExtResource("3_c60k4")])

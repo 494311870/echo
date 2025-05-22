@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://d1yxml56qnl0m" path="res://core/scenes/hand_handler.gd" id="4_pqgap"]
 [ext_resource type="Script" uid="uid://c7dl6u4hddkmy" path="res://core/domain/level.gd" id="4_xuy07"]
 [ext_resource type="Resource" uid="uid://drmijax0w6vxa" path="res://core/contents/cards/card_exit.tres" id="5_6payd"]
-[ext_resource type="Resource" uid="uid://ce67ouxibttg7" path="res://core/contents/levels/level_4.tres" id="6_mh8bq"]
+[ext_resource type="Resource" uid="uid://ce67ouxibttg7" path="res://core/contents/levels/level_5.tres" id="6_mh8bq"]
 [ext_resource type="Theme" uid="uid://qxy11urwrwk3" path="res://theme/theme_main.tres" id="12_lwn0q"]
 [ext_resource type="PackedScene" uid="uid://jass21raeb7d" path="res://core/scenes/ui/player_info.tscn" id="12_m1f21"]
 [ext_resource type="Texture2D" uid="uid://dokro8g2kamep" path="res://art/ui/play.png" id="12_mh8bq"]
