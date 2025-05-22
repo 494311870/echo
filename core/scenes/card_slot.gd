@@ -75,4 +75,9 @@ func flip_top_card() -> void:
 
 	print("flip_top_card")
 	card.flip()
+	
+	
+func unlock_all() -> void:
+	for child in get_children():
+		child.is_locked = false
 

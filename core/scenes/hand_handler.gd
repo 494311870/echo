@@ -24,17 +24,23 @@ func _draw_cards() -> void:
 	var level: Level       = owner.get_meta("level")
 	var cards: Array[Card] = level.get_cards()
 
+
 	for i in range(cards.size()):
 		var card: Card     = cards[i]
 		var slot: CardSlot = _slots[i % _slots.size()]
 
 		var card_view: CardView = _card_view_prefab.instantiate()
 		card_view.card = card.duplicate()
+		card_view.is_locked = true
 		slot.add_card(card_view)
 		card_view.global_position = _deck_position.global_position
 
 		card_view.move_to(slot.global_position)
 		await get_tree().create_timer(0.2).timeout
+
+	
+	for slot in _slots:
+		slot.unlock_all()
 		
 		
 
