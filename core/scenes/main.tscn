@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bbp2hjdxky5hq"]
+[gd_scene load_steps=25 format=3 uid="uid://bbp2hjdxky5hq"]
 
 [ext_resource type="Texture2D" uid="uid://dgt6hrvske42w" path="res://art/pictures/location_color (1).png" id="2_3xncx"]
 [ext_resource type="Script" uid="uid://c430w7ah1fako" path="res://core/scenes/main_handler.gd" id="2_x0aot"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bfh7cs6w1u5in" path="res://core/scenes/card_view.tscn" id="3_dnmk2"]
 [ext_resource type="PackedScene" uid="uid://cwxd3fbw46shg" path="res://core/scenes/card_slot.tscn" id="3_oybgn"]
 [ext_resource type="Resource" uid="uid://dewuujif88kt6" path="res://core/contents/cards/card_human.tres" id="4_dnmk2"]
+[ext_resource type="Texture2D" uid="uid://dgh3fhh3je4hc" path="res://art/cards/human_caught.png" id="4_n4kr7"]
 [ext_resource type="Script" uid="uid://d1yxml56qnl0m" path="res://core/scenes/hand_handler.gd" id="4_pqgap"]
 [ext_resource type="Script" uid="uid://c7dl6u4hddkmy" path="res://core/domain/level.gd" id="4_xuy07"]
 [ext_resource type="Resource" uid="uid://drmijax0w6vxa" path="res://core/contents/cards/card_exit.tres" id="5_6payd"]
@@ -41,6 +42,7 @@ _run_button = NodePath("../../HUD/RunButton")
 _run_slots = NodePath("../../Slot/VBoxContainer/Run")
 _player_info = NodePath("../../Slot/VBoxContainer/Run/CardSlot/StartCard/PlayerInfo")
 _player_card = ExtResource("4_dnmk2")
+_art_player_fail = ExtResource("4_n4kr7")
 
 [node name="LevelHandler" type="Node" parent="Handlers" groups=["level_handler"]]
 script = ExtResource("3_cgnor")

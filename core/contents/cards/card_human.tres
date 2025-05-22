@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://dewuujif88kt6"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dewuujif88kt6"]
 
 [ext_resource type="Texture2D" uid="uid://cpd3grta8u3aq" path="res://art/cards/huamn_normal.png" id="1_nvgt2"]
-[ext_resource type="Script" uid="uid://cfgiwpj6oic73" path="res://core/domain/card.gd" id="2_cuty5"]
+[ext_resource type="Script" uid="uid://chx166pw8rm1" path="res://core/contents/cards/card_human.gd" id="2_nvgt2"]
 
 [resource]
-script = ExtResource("2_cuty5")
+script = ExtResource("2_nvgt2")
 art = ExtResource("1_nvgt2")
+flip_bottom = false
 metadata/_custom_type_script = "uid://cfgiwpj6oic73"

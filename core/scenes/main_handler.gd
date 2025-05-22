@@ -5,6 +5,8 @@ signal level_restarted
 @export var _run_slots: Control
 @export var _player_info: PlayerInfo
 @export var _player_card: Card
+@export var _art_player_fail: Texture2D
+
 
 var _slots: Array[CardSlot]           = []
 var _available_slots: Array[CardSlot] = []
@@ -145,6 +147,7 @@ func _reset_status() -> void:
 
 func game_over() -> void:
 	_is_playing = false
+	_player.change_art(_art_player_fail)
 	await get_tree().create_timer(1.0).timeout
 	print("game over")
 	_reset_scene()
