@@ -22,6 +22,9 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	if not data.has("item"):
 		return false
 
+	if get_top_card():
+		return false
+
 	return true
 
 
@@ -40,11 +43,15 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	drop_item.position = Vector2.ZERO
 
 
-func get_top_card() -> CardView:
+func get_top_card(ignore_back: bool = true) -> CardView:
 	if get_child_count() == 0:
 		return null
 
-	return get_children()[-1] as CardView
+	var top: CardView = get_children()[-1] as CardView
+	if ignore_back and top.is_back:
+		return null
+
+	return top
 
 
 func add_card(card_view: CardView) -> void:
@@ -60,4 +67,12 @@ func clear() -> void:
 	for child in get_children():
 		child.queue_free()
 
-		
+
+func flip_top_card() -> void:
+	var card: CardView = get_top_card(false)
+	if not card:
+		return
+
+	print("flip_top_card")
+	card.flip()
+

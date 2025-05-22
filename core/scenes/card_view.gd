@@ -2,6 +2,7 @@ class_name CardView
 extends Control
 
 @export var is_locked: bool
+@export var is_back: bool
 @export var card: Card: set = _set_card
 # 抖动参数：可调节数值达到不同效果
 @export_group("Shake Effect")
@@ -11,12 +12,18 @@ extends Control
 @export var move_duration: float = 0.5     # 整体移动时间
 
 @onready var _art: TextureRect = %Art
+@onready var _flip_bottom : Control = %FlipBottom
 
-var _is_dragging: bool    = false
-var direction: int        = 1
+var _is_dragging: bool = false
+var direction: int     = 1
 
 
 func flip() -> void:
+	is_back = not is_back
+	visible = not is_back
+
+
+func flip_visuals() -> void:
 	_art.flip_h = not _art.flip_h
 	direction *= -1
 
@@ -62,6 +69,7 @@ func _set_card(value: Card) -> void:
 	print("set card")
 	card.view = self
 	_art.texture = card.art
+	_flip_bottom.visible = card.flip_bottom
 
 
 func _notification(what: int) -> void:
@@ -72,13 +80,14 @@ func _notification(what: int) -> void:
 	if what == NOTIFICATION_DRAG_END:
 		self.set_mouse_filter(MOUSE_FILTER_STOP)
 		if _is_dragging:
+			_is_dragging = false
 			show()
 
 
 func _get_drag_data(at_position: Vector2) -> Variant:
 	if is_locked:
 		return null
-	
+
 	_is_dragging = true
 
 	var item: Control = duplicate()

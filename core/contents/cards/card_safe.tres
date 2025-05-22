@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dtxep43ahxfwm"]
+
+[ext_resource type="Texture2D" uid="uid://bxbb01dw8svh8" path="res://art/cards/safe.png" id="1_0k83r"]
+[ext_resource type="Script" uid="uid://c5hk876e7owat" path="res://core/contents/cards/card_safe.gd" id="1_gq03p"]
+
+[resource]
+script = ExtResource("1_gq03p")
+art = ExtResource("1_0k83r")
+flip_bottom = true

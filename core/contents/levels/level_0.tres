@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Level" load_steps=4 format=3 uid="uid://bedhh8tid1lj4"]
+
+[ext_resource type="Script" uid="uid://cfgiwpj6oic73" path="res://core/domain/card.gd" id="1_ox0fi"]
+[ext_resource type="Resource" uid="uid://bjq2f7ma35773" path="res://core/contents/cards/card_key.tres" id="2_5ssrf"]
+[ext_resource type="Script" uid="uid://c7dl6u4hddkmy" path="res://core/domain/level.gd" id="4_5qyeh"]
+
+[resource]
+script = ExtResource("4_5qyeh")
+cards = Array[ExtResource("1_ox0fi")]([ExtResource("2_5ssrf")])

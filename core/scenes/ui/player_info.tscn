@@ -34,6 +34,12 @@ layout_mode = 2
 [node name="Key3" parent="MarginContainer/Keys" instance=ExtResource("2_5aqe6")]
 layout_mode = 2
 
+[node name="Key4" parent="MarginContainer/Keys" instance=ExtResource("2_5aqe6")]
+layout_mode = 2
+
+[node name="Key5" parent="MarginContainer/Keys" instance=ExtResource("2_5aqe6")]
+layout_mode = 2
+
 [node name="Weapon" type="TextureRect" parent="MarginContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 64)

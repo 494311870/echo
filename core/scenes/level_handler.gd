@@ -5,6 +5,9 @@ signal level_started
 
 var _current_level: int = -1
 
+func _ready() -> void:
+	next_level.call_deferred()
+
 
 func next_level()-> void:
 	_current_level += 1

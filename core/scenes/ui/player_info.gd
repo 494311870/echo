@@ -26,6 +26,8 @@ func _set_player(value: Card) -> void:
 
 	player.refresh_requested.connect(_refresh_info)
 
+	_refresh_info()
+
 
 func _refresh_info()-> void:
 	_weapon.visible = player.has_meta("weapon")

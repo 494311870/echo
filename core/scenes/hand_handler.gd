@@ -22,7 +22,7 @@ func _slot_on_child_order_changed() -> void:
 
 func _draw_cards() -> void:
 	var level: Level       = owner.get_meta("level")
-	var cards: Array[Card] = level.cards
+	var cards: Array[Card] = level.get_cards()
 
 	for i in range(cards.size()):
 		var card: Card     = cards[i]
