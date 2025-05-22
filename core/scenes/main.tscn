@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bbp2hjdxky5hq"]
+[gd_scene load_steps=22 format=3 uid="uid://bbp2hjdxky5hq"]
 
 [ext_resource type="Texture2D" uid="uid://dgt6hrvske42w" path="res://art/location_color (1).png" id="2_3xncx"]
 [ext_resource type="Script" uid="uid://c430w7ah1fako" path="res://core/scenes/main_handler.gd" id="2_x0aot"]
@@ -9,10 +9,17 @@
 [ext_resource type="Script" uid="uid://d1yxml56qnl0m" path="res://core/scenes/hand_handler.gd" id="4_pqgap"]
 [ext_resource type="Script" uid="uid://c7dl6u4hddkmy" path="res://core/domain/level.gd" id="4_xuy07"]
 [ext_resource type="Resource" uid="uid://drmijax0w6vxa" path="res://core/contents/cards/card_exit.tres" id="5_6payd"]
-[ext_resource type="Resource" uid="uid://ce67ouxibttg7" path="res://core/contents/levels/level_5.tres" id="6_mh8bq"]
+[ext_resource type="Resource" uid="uid://d1dbxwmeglvnt" path="res://core/contents/levels/level_1.tres" id="5_m1f21"]
+[ext_resource type="Resource" uid="uid://bto4skkj4q46r" path="res://core/contents/levels/level_3.tres" id="6_mh8bq"]
+[ext_resource type="Resource" uid="uid://bedhh8tid1lj4" path="res://core/contents/levels/level_0.tres" id="6_ukvmc"]
+[ext_resource type="Resource" uid="uid://brg82j6ie7ib1" path="res://core/contents/levels/level_2.tres" id="7_lwn0q"]
+[ext_resource type="Resource" uid="uid://c8cdt3quvrihc" path="res://core/contents/levels/level_4.tres" id="10_ilv27"]
+[ext_resource type="Resource" uid="uid://ce67ouxibttg7" path="res://core/contents/levels/level_5.tres" id="11_smfab"]
 [ext_resource type="Theme" uid="uid://qxy11urwrwk3" path="res://theme/theme_main.tres" id="12_lwn0q"]
 [ext_resource type="PackedScene" uid="uid://jass21raeb7d" path="res://core/scenes/ui/player_info.tscn" id="12_m1f21"]
 [ext_resource type="Texture2D" uid="uid://dokro8g2kamep" path="res://art/ui/play.png" id="12_mh8bq"]
+[ext_resource type="AudioStream" uid="uid://bl5c566crxvqs" path="res://audio/DavidKBD - Code injection Pack - 10 - Space Echoes-loop.ogg" id="14_lwn0q"]
+[ext_resource type="Script" uid="uid://bkn324y78ejlu" path="res://core/scenes/audio_handler.gd" id="14_smfab"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xuy07"]
 
@@ -35,7 +42,7 @@ _player_card = ExtResource("4_dnmk2")
 
 [node name="LevelHandler" type="Node" parent="Handlers" groups=["level_handler"]]
 script = ExtResource("3_cgnor")
-levels = Array[ExtResource("4_xuy07")]([ExtResource("6_mh8bq")])
+levels = Array[ExtResource("4_xuy07")]([ExtResource("6_ukvmc"), ExtResource("5_m1f21"), ExtResource("7_lwn0q"), ExtResource("6_mh8bq"), ExtResource("10_ilv27"), ExtResource("11_smfab")])
 
 [node name="HandHandler" type="Node" parent="Handlers" node_paths=PackedStringArray("_run_button", "_hand_slots", "_deck_position")]
 script = ExtResource("4_pqgap")
@@ -43,6 +50,11 @@ _run_button = NodePath("../../HUD/RunButton")
 _hand_slots = NodePath("../../Slot/VBoxContainer/Hand")
 _card_view_prefab = ExtResource("3_dnmk2")
 _deck_position = NodePath("../../Slot/DeckPosition")
+
+[node name="AudioHandler" type="Node" parent="Handlers" node_paths=PackedStringArray("_music", "_sound")]
+script = ExtResource("14_smfab")
+_music = NodePath("../../Music")
+_sound = NodePath("../../Sound")
 
 [node name="DragPreview" type="CanvasLayer" parent="."]
 layer = 5
@@ -131,7 +143,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_xuy07")
 
 [node name="DeckPosition" type="Marker2D" parent="Slot"]
-position = Vector2(-252, 550)
+position = Vector2(998, 1248)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -169,7 +181,14 @@ expand_mode = 1
 stretch_mode = 5
 flip_h = true
 
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_lwn0q")
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_lwn0q")
+
 [connection signal="level_restarted" from="Handlers/MainHandler" to="Handlers/HandHandler" method="_draw_cards"]
 [connection signal="level_started" from="Handlers/LevelHandler" to="Handlers/MainHandler" method="_reset_status"]
 [connection signal="level_started" from="Handlers/LevelHandler" to="Handlers/HandHandler" method="_draw_cards"]
 [connection signal="pressed" from="HUD/RunButton" to="Handlers/MainHandler" method="_run"]
+[connection signal="pressed" from="HUD/RunButton" to="Handlers/AudioHandler" method="play_bgm"]
