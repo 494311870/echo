@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgaiofmsbba1a"]
+
+[ext_resource type="Texture2D" uid="uid://bex70tlke2yvj" path="res://art/ui/key.png" id="1_abhay"]
+
+[node name="Key" type="TextureRect"]
+custom_minimum_size = Vector2(64, 64)
+texture = ExtResource("1_abhay")
+expand_mode = 1
+stretch_mode = 5

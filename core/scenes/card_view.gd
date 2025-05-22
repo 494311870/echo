@@ -1,6 +1,5 @@
 class_name CardView
 extends Control
-var _is_dragging: bool = false
 
 @export var card: Card: set = _set_card
 # 抖动参数：可调节数值达到不同效果
@@ -11,6 +10,14 @@ var _is_dragging: bool = false
 @export var move_duration: float = 0.5     # 整体移动时间
 
 @onready var _art: TextureRect = %Art
+
+var _is_dragging: bool    = false
+var direction: int        = 1
+
+
+func flip() -> void:
+	_art.flip_h = not _art.flip_h
+	direction *= -1
 
 
 func is_resolved() -> bool:

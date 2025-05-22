@@ -21,6 +21,7 @@ func interact(other_card: Card)-> void:
 
 	key -= 1
 	other_card.set_meta("key", key)
+	other_card.refresh()
 	_is_open = true
 	view.change_art(_art_open)
 		

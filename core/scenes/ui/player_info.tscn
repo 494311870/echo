@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://jass21raeb7d"]
+
+[ext_resource type="Script" uid="uid://bo8dhodcn5afi" path="res://core/scenes/ui/player_info.gd" id="1_or1ub"]
+[ext_resource type="PackedScene" uid="uid://dgaiofmsbba1a" path="res://core/scenes/ui/key.tscn" id="2_5aqe6"]
+[ext_resource type="Texture2D" uid="uid://b8m8ohdfofeqy" path="res://art/ui/weapon.png" id="3_m5s7k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5aqe6"]
+
+[node name="PlayerInfo" type="PanelContainer"]
+offset_right = 300.0
+offset_bottom = 400.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5aqe6")
+script = ExtResource("1_or1ub")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Keys" type="VBoxContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Key" parent="MarginContainer/Keys" instance=ExtResource("2_5aqe6")]
+layout_mode = 2
+
+[node name="Key2" parent="MarginContainer/Keys" instance=ExtResource("2_5aqe6")]
+layout_mode = 2
+
+[node name="Key3" parent="MarginContainer/Keys" instance=ExtResource("2_5aqe6")]
+layout_mode = 2
+
+[node name="Weapon" type="TextureRect" parent="MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("3_m5s7k")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
