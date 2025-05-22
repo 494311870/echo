@@ -123,26 +123,22 @@ card = ExtResource("5_6payd")
 [node name="Hand" type="HBoxContainer" parent="Slot/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 15
+alignment = 1
 
 [node name="CardSlot" parent="Slot/VBoxContainer/Hand" instance=ExtResource("3_oybgn")]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_xuy07")
+is_locked = true
 
 [node name="CardSlot2" parent="Slot/VBoxContainer/Hand" instance=ExtResource("3_oybgn")]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_xuy07")
+is_locked = true
 
 [node name="CardSlot3" parent="Slot/VBoxContainer/Hand" instance=ExtResource("3_oybgn")]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_xuy07")
-
-[node name="CardSlot4" parent="Slot/VBoxContainer/Hand" instance=ExtResource("3_oybgn")]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_xuy07")
-
-[node name="CardSlot5" parent="Slot/VBoxContainer/Hand" instance=ExtResource("3_oybgn")]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_xuy07")
+is_locked = true
 
 [node name="DeckPosition" type="Marker2D" parent="Slot"]
 position = Vector2(998, 1248)
@@ -196,6 +192,7 @@ grow_vertical = 2
 script = ExtResource("20_oc1gu")
 
 [node name="TextureRect" type="TextureRect" parent="Panel/GameVictory"]
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("20_51tpq")
