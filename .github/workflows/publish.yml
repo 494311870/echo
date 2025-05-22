@@ -2,9 +2,9 @@ name: Deploy
 
 on:
   workflow_dispatch:
-#  push:
-#    branches:
-#      - master
+  push:
+    branches:
+      - main
 env:
   ITCH_USERNAME: arcmt
   ITCH_GAME_ID: echo
