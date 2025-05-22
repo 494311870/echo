@@ -1,6 +1,7 @@
 class_name CardView
 extends Control
 
+@export var is_locked: bool
 @export var card: Card: set = _set_card
 # 抖动参数：可调节数值达到不同效果
 @export_group("Shake Effect")
@@ -75,6 +76,9 @@ func _notification(what: int) -> void:
 
 
 func _get_drag_data(at_position: Vector2) -> Variant:
+	if is_locked:
+		return null
+	
 	_is_dragging = true
 
 	var item: Control = duplicate()
