@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uael231d82en"
-path="res://.godot/imported/location_mono (1).png-0012c2c36909474abbc0924c8f7bfa74.ctex"
+uid="uid://83qxwub7ifj5"
+path="res://.godot/imported/result.png-4bbd314c11f5ca97d9a6e8d9ed799eeb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/location_mono (1).png"
-dest_files=["res://.godot/imported/location_mono (1).png-0012c2c36909474abbc0924c8f7bfa74.ctex"]
+source_file="res://art/pictures/result.png"
+dest_files=["res://.godot/imported/result.png-4bbd314c11f5ca97d9a6e8d9ed799eeb.ctex"]
 
 [params]
 
